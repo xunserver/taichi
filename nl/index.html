@@ -22,6 +22,14 @@
             <img src="../images/taichi.png" alt="Tai Chi" class="taichi-img">
         </div>
 
+        <!-- CTA 报名按钮 -->
+        <div class="cta-container">
+            <a href="pages/aanmelden.html" class="cta-button">
+                <span class="cta-text">Meld U Aan voor Lessen</span>
+                <span class="cta-subtext">Begin uw Tai Chi reis vandaag</span>
+            </a>
+        </div>
+
         <div class="content">
             <div class="card">
                 <h3>Yin en Yang Filosofie</h3>
@@ -190,14 +198,86 @@
                 </a>
             </div>
         </div>
+
+        <!-- 学员风采 -->
+        <div class="students-section">
+            <h2 class="students-title">Onze Leerlingen</h2>
+            <p class="students-subtitle">Ontmoet onze Tai Chi gemeenschap</p>
+
+            <div class="students-gallery">
+                <div class="student-card">
+                    <img src="../images/tai-chi-group.jpg" alt="Groepstraining">
+                    <div class="student-overlay">
+                        <div class="student-name">Groepstraining</div>
+                        <div class="student-desc">Samen oefenen in het park</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-park.jpg" alt="Park Beoefening">
+                    <div class="student-overlay">
+                        <div class="student-name">Park Beoefening</div>
+                        <div class="student-desc">Meditatieve bewegingen</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-wellness.jpg" alt="Wellness Sessie">
+                    <div class="student-overlay">
+                        <div class="student-name">Wellness Sessie</div>
+                        <div class="student-desc">Balans tussen lichaam en geest</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-shanghai.jpg" alt="Stedelijke Retreat">
+                    <div class="student-overlay">
+                        <div class="student-name">Stedelijke Retreat</div>
+                        <div class="student-desc">Tai Chi in de stad</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-mountain.jpg" alt="Natuurtraining">
+                    <div class="student-overlay">
+                        <div class="student-name">Natuurtraining</div>
+                        <div class="student-desc">Verbinding met de natuur</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-sunset.jpg" alt="Zonsondergang Sessie">
+                    <div class="student-overlay">
+                        <div class="student-name">Zonsondergang Sessie</div>
+                        <div class="student-desc">Vredige avondoefeningen</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-sky.jpg" alt="Lucht En Licht">
+                    <div class="student-overlay">
+                        <div class="student-name">Lucht En Licht</div>
+                        <div class="student-desc">Hemer van het universum</div>
+                    </div>
+                </div>
+
+                <div class="student-card">
+                    <img src="../images/tai-chi-nature.jpg" alt="Natuur Harmonie">
+                    <div class="student-overlay">
+                        <div class="student-name">Natuur Harmonie</div>
+                        <div class="student-desc">Eenheid met omgeving</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
+    <!-- Lightbox for Students Gallery -->
+    <div class="lightbox" id="students-lightbox">
         <span class="lightbox-close">&times;</span>
         <span class="lightbox-nav lightbox-prev">&#10094;</span>
         <span class="lightbox-nav lightbox-next">&#10095;</span>
-        <img class="lightbox-content" id="lightbox-img" src="" alt="Tai Chi Beoefening">
+        <img class="lightbox-content" id="lightbox-img" src="" alt="Student">
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
@@ -225,93 +305,6 @@
             });
         });
 
-        // 灯箱功能
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        const lightboxCaption = document.getElementById('lightbox-caption');
-        const lightboxClose = document.querySelector('.lightbox-close');
-        const lightboxPrev = document.querySelector('.lightbox-prev');
-        const lightboxNext = document.querySelector('.lightbox-next');
-
-        let currentImageIndex = 0;
-        const visibleItems = [];
-
-        function updateVisibleItems() {
-            visibleItems.length = 0;
-            galleryItems.forEach(item => {
-                if (item.style.display !== 'none') {
-                    visibleItems.push(item);
-                }
-            });
-        }
-
-        // 初始化可见项目
-        updateVisibleItems();
-
-        galleryItems.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                updateVisibleItems();
-                currentImageIndex = visibleItems.indexOf(item);
-                openLightbox(item);
-            });
-        });
-
-        function openLightbox(item) {
-            const img = item.querySelector('img');
-            const title = item.querySelector('.gallery-item-title').textContent;
-            const desc = item.querySelector('.gallery-item-desc').textContent;
-
-            if (img && img.src) {
-                lightboxImg.src = img.src;
-            } else {
-                // 如果没有图片，显示占位符
-                lightboxImg.style.display = 'none';
-            }
-            lightboxCaption.textContent = `${title} - ${desc}`;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            lightboxImg.style.display = 'block';
-        }
-
-        lightboxClose.addEventListener('click', closeLightbox);
-
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        // 键盘导航
-        document.addEventListener('keydown', (e) => {
-            if (!lightbox.classList.contains('active')) return;
-
-            if (e.key === 'Escape') {
-                closeLightbox();
-            } else if (e.key === 'ArrowLeft') {
-                showPrevImage();
-            } else if (e.key === 'ArrowRight') {
-                showNextImage();
-            }
-        });
-
-        lightboxPrev.addEventListener('click', showPrevImage);
-        lightboxNext.addEventListener('click', showNextImage);
-
-        function showPrevImage() {
-            currentImageIndex = (currentImageIndex - 1 + visibleItems.length) % visibleItems.length;
-            openLightbox(visibleItems[currentImageIndex]);
-        }
-
-        function showNextImage() {
-            currentImageIndex = (currentImageIndex + 1) % visibleItems.length;
-            openLightbox(visibleItems[currentImageIndex]);
-        }
-
         // 图片懒加载（当用户添加真实图片时使用）
         if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -331,6 +324,74 @@
             document.querySelectorAll('img[data-src]').forEach(img => {
                 imageObserver.observe(img);
             });
+        }
+
+        // 学员风采灯箱功能
+        const studentCards = document.querySelectorAll('.student-card');
+        const lightbox = document.getElementById('students-lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxCaption = document.getElementById('lightbox-caption');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+        const lightboxPrev = lightbox.querySelector('.lightbox-prev');
+        const lightboxNext = lightbox.querySelector('.lightbox-next');
+
+        let currentStudentIndex = 0;
+
+        studentCards.forEach((card, index) => {
+            card.addEventListener('click', () => {
+                currentStudentIndex = index;
+                openLightbox(card);
+            });
+        });
+
+        function openLightbox(card) {
+            const img = card.querySelector('img');
+            const name = card.querySelector('.student-name').textContent;
+            const desc = card.querySelector('.student-desc').textContent;
+
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = `${name} - ${desc}`;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // 键盘导航
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+
+            if (e.key === 'Escape') {
+                closeLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevStudent();
+            } else if (e.key === 'ArrowRight') {
+                showNextStudent();
+            }
+        });
+
+        lightboxPrev.addEventListener('click', showPrevStudent);
+        lightboxNext.addEventListener('click', showNextStudent);
+
+        function showPrevStudent() {
+            currentStudentIndex = (currentStudentIndex - 1 + studentCards.length) % studentCards.length;
+            openLightbox(studentCards[currentStudentIndex]);
+        }
+
+        function showNextStudent() {
+            currentStudentIndex = (currentStudentIndex + 1) % studentCards.length;
+            openLightbox(studentCards[currentStudentIndex]);
         }
     </script>
 

@@ -302,6 +302,44 @@ h1 {
     color: #666;
 }
 
+/* Floating CTA Button */
+.floating-cta {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #cc3333 0%, #a02222 100%);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(204, 51, 51, 0.4);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.floating-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(204, 51, 51, 0.5);
+}
+
+.floating-cta:active {
+    transform: translateY(0);
+}
+
+.floating-cta-icon {
+    font-size: 1.3rem;
+}
+
+.floating-cta-text {
+    font-size: 1.1rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     h1 {
@@ -364,5 +402,15 @@ h1 {
     .back-btn {
         padding: 10px 20px;
         font-size: 0.9rem;
+    }
+
+    .floating-cta {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 20px;
+    }
+
+    .floating-cta-text {
+        font-size: 1rem;
     }
 }

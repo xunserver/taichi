@@ -154,6 +154,69 @@ h1::after {
     z-index: -1;
 }
 
+/* CTA 报名按钮 */
+.cta-container {
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.cta-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 24px 48px;
+    background: linear-gradient(135deg, #cc3333 0%, #a02222 100%);
+    border-radius: 12px;
+    text-decoration: none;
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(204, 51, 51, 0.4);
+    position: relative;
+    overflow: hidden;
+    min-width: 280px;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.cta-button:hover::before {
+    left: 100%;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(204, 51, 51, 0.5);
+}
+
+.cta-button:active {
+    transform: translateY(-1px);
+}
+
+.cta-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cta-subtext {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    opacity: 0.95;
+    font-family: 'SimSun', 'STSong', '宋体', serif;
+}
+
 /* 内容区域 */
 .content {
     display: grid;
@@ -291,6 +354,19 @@ h1::after {
         height: 350px;
     }
 
+    .cta-button {
+        padding: 20px 36px;
+        min-width: 240px;
+    }
+
+    .cta-text {
+        font-size: 1.2rem;
+    }
+
+    .cta-subtext {
+        font-size: 0.9rem;
+    }
+
     .content {
         grid-template-columns: 1fr;
     }
@@ -340,6 +416,19 @@ h1::after {
     .taichi-container::before {
         width: 280px;
         height: 280px;
+    }
+
+    .cta-button {
+        padding: 16px 28px;
+        min-width: 200px;
+    }
+
+    .cta-text {
+        font-size: 1.1rem;
+    }
+
+    .cta-subtext {
+        font-size: 0.85rem;
     }
 
     .card {
@@ -512,102 +601,6 @@ h1::after {
     z-index: 1;
 }
 
-/* 灯箱效果 */
-.lightbox {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(42, 42, 42, 0.95);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    animation: fadeIn 0.3s ease;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox-content {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-.lightbox-close {
-    position: absolute;
-    top: 30px;
-    right: 40px;
-    color: #fff;
-    font-size: 3rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    line-height: 1;
-    opacity: 0.8;
-}
-
-.lightbox-close:hover {
-    opacity: 1;
-    transform: rotate(90deg);
-}
-
-.lightbox-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #fff;
-    font-size: 3rem;
-    cursor: pointer;
-    padding: 20px;
-    transition: all 0.3s ease;
-    user-select: none;
-    opacity: 0.8;
-}
-
-.lightbox-nav:hover {
-    opacity: 1;
-    transform: translateY(-50%) scale(1.1);
-}
-
-.lightbox-prev {
-    left: 20px;
-}
-
-.lightbox-next {
-    right: 20px;
-}
-
-.lightbox-caption {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #fff;
-    font-size: 1.2rem;
-    text-align: center;
-    max-width: 80%;
-    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
-    letter-spacing: 0.1em;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 /* 画廊分类标签 */
 .gallery-tabs {
     display: flex;
@@ -653,23 +646,6 @@ h1::after {
         border-radius: 6px;
     }
 
-    .lightbox-close {
-        top: 20px;
-        right: 20px;
-        font-size: 2.5rem;
-    }
-
-    .lightbox-nav {
-        font-size: 2rem;
-        padding: 15px;
-    }
-
-    .lightbox-caption {
-        font-size: 1rem;
-        bottom: 20px;
-        padding: 0 15px;
-    }
-
     .gallery-tab {
         padding: 8px 20px;
         font-size: 0.9rem;
@@ -695,7 +671,280 @@ h1::after {
         padding: 8px 16px;
         font-size: 0.85rem;
     }
+}
 
+/* ========== Students Section ========== */
+.students-section {
+    margin-top: 80px;
+    padding: 60px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.students-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2a2a2a;
+    margin-bottom: 15px;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    letter-spacing: 0.3em;
+}
+
+.students-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 50px;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    letter-spacing: 0.15em;
+}
+
+.students-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.student-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.student-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.student-card:hover img {
+    transform: scale(1.1);
+}
+
+.student-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(42, 42, 42, 0.95), transparent);
+    padding: 30px 20px 20px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.student-card:hover .student-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.student-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    letter-spacing: 0.1em;
+}
+
+.student-desc {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-family: 'SimSun', 'STSong', '宋体', serif;
+    line-height: 1.6;
+}
+
+/* Students Section Responsive */
+@media (max-width: 768px) {
+    .students-section {
+        padding: 40px 15px;
+        margin-top: 60px;
+    }
+
+    .students-title {
+        font-size: 2rem;
+        letter-spacing: 0.2em;
+    }
+
+    .students-subtitle {
+        font-size: 1rem;
+        margin-bottom: 35px;
+    }
+
+    .students-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+
+    .student-name {
+        font-size: 1.1rem;
+    }
+
+    .student-desc {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .students-title {
+        font-size: 1.6rem;
+        letter-spacing: 0.15em;
+    }
+
+    .students-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .students-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .student-overlay {
+        padding: 25px 15px 15px;
+    }
+
+    .student-name {
+        font-size: 1rem;
+    }
+
+    .student-desc {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========== Lightbox ========== */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(42, 42, 42, 0.95);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 8px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    line-height: 1;
+    opacity: 0.8;
+    z-index: 10001;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+    transform: rotate(90deg);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 20px;
+    transition: all 0.3s ease;
+    user-select: none;
+    opacity: 0.8;
+    z-index: 10001;
+}
+
+.lightbox-nav:hover {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80%;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    letter-spacing: 0.1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Lightbox Responsive */
+@media (max-width: 768px) {
+    .lightbox-close {
+        top: 20px;
+        right: 20px;
+        font-size: 2.5rem;
+    }
+
+    .lightbox-nav {
+        font-size: 2rem;
+        padding: 15px;
+    }
+
+    .lightbox-caption {
+        font-size: 1rem;
+        bottom: 20px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
     .lightbox-close {
         top: 15px;
         right: 15px;
@@ -722,6 +971,7 @@ h1::after {
 }
 
 .lang-toggle {
+    min-width: 180px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -768,7 +1018,8 @@ h1::after {
     border: 2px solid #2a2a2a;
     border-top: none;
     border-radius: 0 0 8px 8px;
-    min-width: 150px;
+    min-width: 180px;
+    width: max-content;
     opacity: 0;
     visibility: hidden;
     transform: translateY(-10px);
@@ -783,13 +1034,16 @@ h1::after {
 }
 
 .lang-option {
-    display: block;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     padding: 12px 20px;
     color: #2a2a2a;
     text-decoration: none;
     transition: all 0.2s ease;
     font-family: 'KaiTi', 'STKaiti', '楷体', serif;
     border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+    white-space: nowrap;
 }
 
 .lang-option:last-child {
