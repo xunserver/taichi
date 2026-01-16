@@ -1,0 +1,121 @@
+{
+  "language": "nl",
+  "languageName": "Nederlands",
+  "home": {
+    "title": "Chinese Tai Chi - Yin en Yang Harmonie",
+    "subtitle": "Yin en Yang Harmonie · Balans tussen Hemel en Aarde",
+    "taichiAlt": "Tai Chi"
+  },
+  "nav": {
+    "home": "Home",
+    "language": "Taal"
+  },
+  "cards": {
+    "philosophy": {
+      "title": "Yin en Yang Filosofie",
+      "content": "Yin en Yang zijn fundamentele concepten uit de oude Chinese filosofie, die twee tegengestelde maar complementaire krachten vertegenwoordigen. Yin staat voor duisternis, koud en zachtheid; Yang voor licht, warmte en kracht. Ze zijn van elkaar afhankelijk en transformeren voortdurend, wat de basis vormt van alles in het universum."
+    },
+    "practice": {
+      "title": "Tai Chi Beoefening",
+      "content": "Tai Chi Chuan vindt zijn oorsprong in de traditionele Chinese filosofie en benadrukt het principe van \"zacht overwint hard\" en \"reactie op actie\". Door middel van trage, vloeiende bewegingen wordt harmonie tussen lichaam en geest bereikt, wat weerspiegelt wat in het Taoïsme \"doen door niet te doen\" wordt genoemd."
+    },
+    "health": {
+      "title": "Gezondheid en Welzijn",
+      "content": "Tai Chi combineert beweging, ademhaling en meditatie, wat helpt om lichaamsbalans te verbeteren, spierkracht te vergroten en stress te verminderen. Onderzoek toont aan dat regelmatige beoefening van Tai Chi de immuniteit kan verhogen en de cardiovasculaire gezondheid kan verbeteren."
+    }
+  },
+  "quote": {
+    "text": "\"Tai Chi genereert Yin en Yang, Yin en Yang genereren de vier verschijnselen, de vier verschijnselen genereren de acht trigrammen\"",
+    "author": "— I Ching (Boek der Veranderingen)"
+  },
+  "gallery": {
+    "title": "Tai Chi Demonstratie",
+    "tabs": {
+      "all": "Alles",
+      "basics": "Basis",
+      "forms": "Vormen",
+      "weapons": "Wapens",
+      "push": "Push Hands"
+    }
+  },
+  "items": {
+    "zhanZhuang": {
+      "title": "Zhan Zhuang",
+      "desc": "Staande meditatie voor innerlijke kracht"
+    },
+    "cloudHands": {
+      "title": "Cloud Hands",
+      "desc": "Vloeiende cirkelvormige bewegingen"
+    },
+    "singleWhip": {
+      "title": "Single Whip",
+      "desc": "Grote open beweging"
+    },
+    "partingWildHorse": {
+      "title": "Parting Wild Horse's Mane",
+      "desc": "Links-rechts coördinatie"
+    },
+    "24Form": {
+      "title": "24-Form Tai Chi",
+      "desc": "Gestandaardiseerde vorm"
+    },
+    "42Form": {
+      "title": "42-Form Tai Chi",
+      "desc": "Competitie vorm"
+    },
+    "chenStyle": {
+      "title": "Chen Stijl",
+      "desc": "Gecombineerd hard en zacht"
+    },
+    "yangStyle": {
+      "title": "Yang Stijl",
+      "desc": "Groot en vloeiend"
+    },
+    "sword": {
+      "title": "Tai Chi Zwaard",
+      "desc": "Vloeiende zwaardvormen"
+    },
+    "saber": {
+      "title": "Tai Chi Sabel",
+      "desc": "Krachtige sabeltechnieken"
+    },
+    "fan": {
+      "title": "Tai Chi Waaier",
+      "desc": "Gracieuze waaierbewegingen"
+    },
+    "staff": {
+      "title": "Tai Chi Staf",
+      "desc": "Krachttraining met staf"
+    },
+    "fixedPush": {
+      "title": "Vaste Push Hands",
+      "desc": "Stabiele basis训练"
+    },
+    "movingPush": {
+      "title": "Bewegende Push Hands",
+      "desc": "Vrij bewegen vooruit en achteruit"
+    },
+    "daLu": {
+      "title": "Da Lu Push Hands",
+      "desc": "Grote cirkelvormige technieken"
+    },
+    "freeSparring": {
+      "title": "Vrij Sparren",
+      "desc": "Praktische toepassing"
+    }
+  },
+  "detailPage": {
+    "backToHome": "Terug naar Home",
+    "introduction": "Introductie",
+    "technique": "Techniek en Beweging",
+    "keyPoints": "Belangrijke Punten",
+    "training": "Training Advies",
+    "mistakes": "Veelgemaakte Fouten",
+    "benefits": "Gezondheidsvoordelen",
+    "related": "Gerelateerde Technieken"
+  },
+  "switcher": {
+    "selectLanguage": "Selecteer Taal",
+    "currentLanguage": "Huidige Taal"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "language": "zh",
+  "languageName": "中文",
+  "home": {
+    "title": "中国太极拳 - 阴阳和谐",
+    "subtitle": "阴阳和谐 · 天地平衡",
+    "taichiAlt": "太极"
+  },
+  "nav": {
+    "home": "首页",
+    "language": "语言"
+  },
+  "cards": {
+    "philosophy": {
+      "title": "阴阳哲学",
+      "content": "阴阳是中国古代哲学的基本概念，代表两个对立但互补的力量。阴代表黑暗、寒冷和柔软；阳代表光明、炎热和力量。它们相互依存，不断转化，构成宇宙万物的基础。"
+    },
+    "practice": {
+      "title": "太极拳练习",
+      "content": "太极拳源于中国传统哲学，强调"以柔克刚"和"后发制人"的原则。通过缓慢、流畅的动作，达到身心和谐，体现了道家"无为而治"的思想。"
+    },
+    "health": {
+      "title": "健康与养生",
+      "content": "太极拳结合运动、呼吸和冥想，有助于改善身体平衡、增强肌肉力量、减轻压力。研究表明，经常练习太极拳可以提高免疫力，改善心血管健康。"
+    }
+  },
+  "quote": {
+    "text": ""太极生两仪，两仪生四象，四象生八卦"",
+    "author": "— 《易经》"
+  },
+  "gallery": {
+    "title": "太极拳演示",
+    "tabs": {
+      "all": "全部",
+      "basics": "基本功",
+      "forms": "套路",
+      "weapons": "器械",
+      "push": "推手"
+    }
+  },
+  "items": {
+    "zhanZhuang": {
+      "title": "站桩",
+      "desc": "站立冥想，培养内劲"
+    },
+    "cloudHands": {
+      "title": "云手",
+      "desc": "流畅的圆形动作"
+    },
+    "singleWhip": {
+      "title": "单鞭",
+      "desc": "大开大合的动作"
+    },
+    "partingWildHorse": {
+      "title": "野马分鬃",
+      "desc": "左右协调"
+    },
+    "24Form": {
+      "title": "24式太极拳",
+      "desc": "标准化套路"
+    },
+    "42Form": {
+      "title": "42式太极拳",
+      "desc": "竞赛套路"
+    },
+    "chenStyle": {
+      "title": "陈式太极拳",
+      "desc": "刚柔相济"
+    },
+    "yangStyle": {
+      "title": "杨式太极拳",
+      "desc": "舒展大方"
+    },
+    "sword": {
+      "title": "太极剑",
+      "desc": "流畅的剑法"
+    },
+    "saber": {
+      "title": "太极刀",
+      "desc": "刚猛的刀法"
+    },
+    "fan": {
+      "title": "太极扇",
+      "desc": "优雅的扇法"
+    },
+    "staff": {
+      "title": "太极棍",
+      "desc": "棍术力量训练"
+    },
+    "fixedPush": {
+      "title": "定步推手",
+      "desc": "稳固基本功训练"
+    },
+    "movingPush": {
+      "title": "活步推手",
+      "desc": "进退自由移动"
+    },
+    "daLu": {
+      "title": "大捋",
+      "desc": "大圆形技法"
+    },
+    "freeSparring": {
+      "title": "散手",
+      "desc": "实战应用"
+    }
+  },
+  "detailPage": {
+    "backToHome": "返回首页",
+    "introduction": "简介",
+    "technique": "动作要领",
+    "keyPoints": "重点提示",
+    "training": "训练建议",
+    "mistakes": "常见错误",
+    "benefits": "健康益处",
+    "related": "相关招式"
+  },
+  "switcher": {
+    "selectLanguage": "选择语言",
+    "currentLanguage": "当前语言"
+  }
+}

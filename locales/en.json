@@ -1,0 +1,121 @@
+{
+  "language": "en",
+  "languageName": "English",
+  "home": {
+    "title": "Chinese Tai Chi - Yin and Yang Harmony",
+    "subtitle": "Yin and Yang Harmony · Balance Between Heaven and Earth",
+    "taichiAlt": "Tai Chi"
+  },
+  "nav": {
+    "home": "Home",
+    "language": "Language"
+  },
+  "cards": {
+    "philosophy": {
+      "title": "Yin and Yang Philosophy",
+      "content": "Yin and Yang are fundamental concepts from ancient Chinese philosophy, representing two opposing but complementary forces. Yin represents darkness, cold, and softness; Yang represents light, heat, and strength. They depend on each other and constantly transform, forming the basis of everything in the universe."
+    },
+    "practice": {
+      "title": "Tai Chi Practice",
+      "content": "Tai Chi Chuan originates from traditional Chinese philosophy and emphasizes the principle of 'soft overcoming hard' and 'response to action'. Through slow, flowing movements, harmony between body and mind is achieved, reflecting what Taoism calls 'doing through not doing'."
+    },
+    "health": {
+      "title": "Health and Wellness",
+      "content": "Tai Chi combines movement, breathing, and meditation, helping to improve body balance, increase muscle strength, and reduce stress. Research shows that regular practice of Tai Chi can boost immunity and improve cardiovascular health."
+    }
+  },
+  "quote": {
+    "text": "\"Tai Chi generates Yin and Yang, Yin and Yang generate the four phenomena, the four phenomena generate the eight trigrams\"",
+    "author": "— I Ching (Book of Changes)"
+  },
+  "gallery": {
+    "title": "Tai Chi Demonstration",
+    "tabs": {
+      "all": "All",
+      "basics": "Basics",
+      "forms": "Forms",
+      "weapons": "Weapons",
+      "push": "Push Hands"
+    }
+  },
+  "items": {
+    "zhanZhuang": {
+      "title": "Zhan Zhuang",
+      "desc": "Standing meditation for internal power"
+    },
+    "cloudHands": {
+      "title": "Cloud Hands",
+      "desc": "Flowing circular movements"
+    },
+    "singleWhip": {
+      "title": "Single Whip",
+      "desc": "Large open movement"
+    },
+    "partingWildHorse": {
+      "title": "Parting Wild Horse's Mane",
+      "desc": "Left-right coordination"
+    },
+    "24Form": {
+      "title": "24-Form Tai Chi",
+      "desc": "Standardized form"
+    },
+    "42Form": {
+      "title": "42-Form Tai Chi",
+      "desc": "Competition form"
+    },
+    "chenStyle": {
+      "title": "Chen Style",
+      "desc": "Combined hard and soft"
+    },
+    "yangStyle": {
+      "title": "Yang Style",
+      "desc": "Large and flowing"
+    },
+    "sword": {
+      "title": "Tai Chi Sword",
+      "desc": "Flowing sword forms"
+    },
+    "saber": {
+      "title": "Tai Chi Saber",
+      "desc": "Powerful saber techniques"
+    },
+    "fan": {
+      "title": "Tai Chi Fan",
+      "desc": "Graceful fan movements"
+    },
+    "staff": {
+      "title": "Tai Chi Staff",
+      "desc": "Strength training with staff"
+    },
+    "fixedPush": {
+      "title": "Fixed Push Hands",
+      "desc": "Stable foundation training"
+    },
+    "movingPush": {
+      "title": "Moving Push Hands",
+      "desc": "Free movement forward and backward"
+    },
+    "daLu": {
+      "title": "Da Lu Push Hands",
+      "desc": "Large circular techniques"
+    },
+    "freeSparring": {
+      "title": "Free Sparring",
+      "desc": "Practical application"
+    }
+  },
+  "detailPage": {
+    "backToHome": "Back to Home",
+    "introduction": "Introduction",
+    "technique": "Technique and Movement",
+    "keyPoints": "Key Points",
+    "training": "Training Advice",
+    "mistakes": "Common Mistakes",
+    "benefits": "Health Benefits",
+    "related": "Related Techniques"
+  },
+  "switcher": {
+    "selectLanguage": "Select Language",
+    "currentLanguage": "Current Language"
+  }
+}

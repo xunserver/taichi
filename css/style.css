@@ -712,3 +712,105 @@ h1::after {
         bottom: 15px;
     }
 }
+
+/* ========== Language Switcher ========== */
+.language-switcher {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #2a2a2a;
+    border-radius: 8px;
+    color: #2a2a2a;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lang-toggle:hover {
+    background: #2a2a2a;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-toggle.active {
+    border-radius: 8px 8px 0 0;
+}
+
+.lang-toggle .current-lang {
+    font-weight: 500;
+}
+
+.lang-toggle .lang-arrow {
+    transition: transform 0.3s ease;
+}
+
+.lang-toggle.active .lang-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    border: 2px solid #2a2a2a;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    min-width: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.lang-dropdown.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-option {
+    display: block;
+    padding: 12px 20px;
+    color: #2a2a2a;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-family: 'KaiTi', 'STKaiti', '楷体', serif;
+    border-bottom: 1px solid rgba(42, 42, 42, 0.1);
+}
+
+.lang-option:last-child {
+    border-bottom: none;
+}
+
+.lang-option:hover {
+    background: rgba(42, 42, 42, 0.05);
+    padding-left: 25px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .language-switcher {
+        position: static;
+        margin-bottom: 20px;
+        text-align: right;
+    }
+
+    .lang-dropdown {
+        right: auto;
+        left: 0;
+    }
+}
