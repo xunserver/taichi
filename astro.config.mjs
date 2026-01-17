@@ -11,7 +11,7 @@ export default defineConfig({
   // 部署到根目录: base: '/'
   // 部署到子目录: base: '/your-subdirectory/'
   // 可以通过环境变量 ASTRO_BASE 动态配置
-  base: import.meta.env.ASTRO_BASE || './',
+  base: import.meta.env.ASTRO_BASE || '/taichi/',
 
   // 如果需要生成 sitemap 或 RSS，取消注释并设置正确的 site
   // site: 'https://your-domain.com',

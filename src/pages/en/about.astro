@@ -5,6 +5,9 @@ import taichiLogo from '../../assets/image/taichi-logo.png';
 import bgMeditation from '../../assets/image/tai-chi-meditation.jpg';
 import bgNature from '../../assets/image/tai-chi-nature.jpg';
 import bgGroup from '../../assets/image/tai-chi-group.jpg';
+import { localizedPath } from '../../lib/paths';
+
+const currentLocale = 'en';
 ---
 
 <BaseLayout title="About Tai Chi - Exploring Centuries of Wisdom">
@@ -1094,13 +1097,13 @@ import bgGroup from '../../assets/image/tai-chi-group.jpg';
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a
-          href="/en/courses"
+          href={localizedPath('/courses', currentLocale)}
           class="px-8 py-4 bg-accent hover:bg-primary text-paper hover:text-paper border-2 border-accent hover:border-primary rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           View Courses
         </a>
         <a
-          href="/en/movements"
+          href={localizedPath('/movements', currentLocale)}
           class="px-8 py-4 border-2 border-accent/30 text-accent hover:bg-accent/10 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105"
         >
           Learn Movements

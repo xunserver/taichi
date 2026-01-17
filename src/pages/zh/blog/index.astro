@@ -8,6 +8,9 @@ import parkImage from '../../../assets/image/tai-chi-park.jpg';
 import wellnessImage from '../../../assets/image/tai-chi-wellness.jpg';
 import meditationImage from '../../../assets/image/tai-chi-meditation.jpg';
 import natureImage from '../../../assets/image/tai-chi-nature.jpg';
+import { localizedPath } from '../../../lib/paths';
+
+const currentLocale = (Astro.currentLocale || 'nl') as 'nl' | 'en' | 'zh';
 ---
 
 <BaseLayout title="学员风采 - 太极传承者">
@@ -542,13 +545,13 @@ import natureImage from '../../../assets/image/tai-chi-nature.jpg';
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a
-          href="/zh/courses"
+          href={localizedPath('/courses', currentLocale)}
           class="px-8 py-4 bg-accent hover:bg-primary text-paper hover:text-paper border-2 border-accent hover:border-primary rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           立即报名
         </a>
         <a
-          href="/zh/movements"
+          href={localizedPath('/movements', currentLocale)}
           class="px-8 py-4 border-2 border-accent/30 text-accent hover:bg-accent/10 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105"
         >
           了解课程

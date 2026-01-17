@@ -5,6 +5,7 @@ import taichiLogo from '../assets/image/taichi-logo.png';
 import bgMeditation from '../assets/image/tai-chi-meditation.jpg';
 import bgNature from '../assets/image/tai-chi-nature.jpg';
 import bgGroup from '../assets/image/tai-chi-group.jpg';
+import { withBase } from '../lib/paths';
 ---
 
 <BaseLayout title="Over Tai Chi - Eeuwenoude wijsheid ontdekken">
@@ -1095,13 +1096,13 @@ import bgGroup from '../assets/image/tai-chi-group.jpg';
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a
-          href="/courses"
+          href={withBase("/courses")}
           class="px-8 py-4 bg-accent hover:bg-primary text-paper hover:text-paper border-2 border-accent hover:border-primary rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           Bekijk cursussen
         </a>
         <a
-          href="/movements"
+          href={withBase("/movements")}
           class="px-8 py-4 border-2 border-accent/30 text-accent hover:bg-accent/10 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105"
         >
           Ontdek bewegingen

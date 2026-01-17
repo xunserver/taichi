@@ -6,6 +6,9 @@ import poseImage from '../../../assets/image/tai-chi-pose.jpg';
 import silhouetteImage from '../../../assets/image/tai-chi-silhouette.jpg';
 import standingImage from '../../../assets/image/tai-chi-standing.jpg';
 import kungFuImage from '../../../assets/image/tai-chi-kung-fu.jpg';
+import { localizedPath } from '../../../lib/paths';
+
+const currentLocale = (Astro.currentLocale || 'nl') as 'nl' | 'en' | 'zh';
 ---
 
 <BaseLayout title="太极招式 - 经典动作展示">
@@ -777,13 +780,13 @@ import kungFuImage from '../../../assets/image/tai-chi-kung-fu.jpg';
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a
-          href="/zh/courses"
+          href={localizedPath('/courses', currentLocale)}
           class="px-8 py-4 bg-accent hover:bg-primary text-paper hover:text-paper border-2 border-accent hover:border-primary rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           查看课程
         </a>
         <a
-          href="/zh/about"
+          href={localizedPath('/about', currentLocale)}
           class="px-8 py-4 border-2 border-accent/30 text-accent hover:bg-accent/10 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105"
         >
           了解太极

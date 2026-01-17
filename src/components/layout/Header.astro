@@ -3,17 +3,10 @@ import { Image } from 'astro:assets';
 import taichiLogo from '../../assets/image/taichi-logo.png';
 import LanguageSwitcher from '../ui/LanguageSwitcher.vue';
 import { translations } from '../../lib/i18n';
+import { localizedPath } from '../../lib/paths';
 
 const currentLocale = (Astro.currentLocale || 'nl') as 'nl' | 'en' | 'zh';
 const t = translations[currentLocale];
-
-// 根据语言生成链接
-const getLocalizedHref = (path: string) => {
-  if (currentLocale === 'nl') {
-    return path;
-  }
-  return `/${currentLocale}${path}`;
-};
 
 // 网站名称翻译
 const siteNames = {
@@ -23,11 +16,11 @@ const siteNames = {
 };
 
 const navigation = [
-  { name: t.nav.home, href: getLocalizedHref('/') },
-  { name: t.nav.about, href: getLocalizedHref('/about') },
-  { name: t.nav.movements, href: getLocalizedHref('/movements') },
-  { name: t.nav.courses, href: getLocalizedHref('/courses') },
-  { name: t.nav.blog, href: getLocalizedHref('/blog') },
+  { name: t.nav.home, href: localizedPath('/', currentLocale) },
+  { name: t.nav.about, href: localizedPath('/about', currentLocale) },
+  { name: t.nav.movements, href: localizedPath('/movements', currentLocale) },
+  { name: t.nav.courses, href: localizedPath('/courses', currentLocale) },
+  { name: t.nav.blog, href: localizedPath('/blog', currentLocale) },
 ];
 
 // 按钮标签翻译
@@ -44,7 +37,7 @@ const labels = buttonLabels[currentLocale];
   <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href={getLocalizedHref('/')} class="flex items-center space-x-3 group">
+      <a href={localizedPath('/', currentLocale)} class="flex items-center space-x-3 group">
         <Image
           src={taichiLogo}
           alt={labels.logo}

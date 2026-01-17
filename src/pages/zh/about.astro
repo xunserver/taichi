@@ -5,6 +5,9 @@ import taichiLogo from '../../assets/image/taichi-logo.png';
 import bgMeditation from '../../assets/image/tai-chi-meditation.jpg';
 import bgNature from '../../assets/image/tai-chi-nature.jpg';
 import bgGroup from '../../assets/image/tai-chi-group.jpg';
+import { localizedPath } from '../../lib/paths';
+
+const currentLocale = (Astro.currentLocale || 'nl') as 'nl' | 'en' | 'zh';
 ---
 
 <BaseLayout title="关于太极 - 探索千年智慧">
@@ -1100,13 +1103,13 @@ import bgGroup from '../../assets/image/tai-chi-group.jpg';
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a
-          href="/zh/courses"
+          href={localizedPath('/courses', currentLocale)}
           class="px-8 py-4 bg-accent hover:bg-primary text-paper hover:text-paper border-2 border-accent hover:border-primary rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           查看课程
         </a>
         <a
-          href="/zh/movements"
+          href={localizedPath('/movements', currentLocale)}
           class="px-8 py-4 border-2 border-accent/30 text-accent hover:bg-accent/10 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105"
         >
           了解招式

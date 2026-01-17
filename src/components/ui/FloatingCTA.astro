@@ -1,23 +1,37 @@
 ---
 import { Image } from 'astro:assets';
 import taichiLogo from '../../assets/image/taichi-logo.png';
+import { localizedPath } from '../../lib/paths';
 
 const currentPath = Astro.url.pathname;
+
+// Determine current locale from path
+const getLocaleFromPath = (path: string): 'nl' | 'en' | 'zh' => {
+  if (path.startsWith('/en/')) return 'en';
+  if (path.startsWith('/zh/')) return 'zh';
+  return 'nl'; // default locale
+};
+
+const currentLocale = getLocaleFromPath(currentPath);
+const coursesPath = localizedPath('/courses', currentLocale);
+const anchor = currentLocale === 'zh' ? '#报名表单' : (currentLocale === 'en' ? '#registration-form' : '#inschrijvingsformulier');
+const ctaHref = coursesPath + anchor;
+const shouldShow = !currentPath.includes('/courses');
 ---
 
-<!-- 不在报名页面显示悬浮按钮 -->
-{currentPath !== '/courses' && (
+<!-- Floating CTA Button -->
+{shouldShow && (
   <div class="fixed right-6 bottom-6 z-50 floating-cta">
     <a
-      href="/courses#报名表单"
+      href={ctaHref}
       class="group block relative"
-      aria-label="立即报名"
+      aria-label={currentLocale === 'zh' ? '立即报名' : (currentLocale === 'en' ? 'Register Now' : 'Direct Inschrijven')}
     >
-      <!-- 太极图标容器 -->
-      <div class="w-16 h-16   border-accent/30 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 flex items-center justify-center">
+      <!-- Tai Chi Logo Container -->
+      <div class="w-16 h-16 border-accent/30 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-110 flex items-center justify-center">
         <Image
           src={taichiLogo}
-          alt="太极"
+          alt="Tai Chi"
           width={64}
           height={64}
           class="w-12 h-12 object-contain animate-spin"
@@ -26,32 +40,16 @@ const currentPath = Astro.url.pathname;
         />
       </div>
 
-      <!-- Tooltip 提示 -->
-      <div class="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1  text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
-        立即报名
+      <!-- Tooltip -->
+      <div class="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1 text-sm font-medium rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+        {currentLocale === 'zh' ? '立即报名' : (currentLocale === 'en' ? 'Register Now' : 'Direct Inschrijven')}
       </div>
     </a>
   </div>
 )}
 
-  <!-- 微信咨询按钮（可选，注释掉） -->
-  <!--
-  <a
-    href="#"
-    class="flex items-center justify-center w-14 h-14 bg-cyan hover:bg-primary text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-    aria-label="微信咨询"
-    title="微信咨询"
-  >
-    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.797 2.967a.391.391 0 0 0 .617.423l3.145-.729a.58.58 0 0 1 .338.044 10.33 10.33 0 0 0 2.737.36c5.203 0 9.419-3.287 9.419-7.346 0-4.058-4.216-7.346-9.419-7.346-.896 0-1.76.121-2.577.339a.58.58 0 0 1 .327-.046l3.085.73a.391.391 0 0 0 .473-.272l-.822-3.075a.587.587 0 0 1 .178-.574C18.829 12.716 20 10.725 20 8.513c0-4.055-3.891-7.34-8.691-7.34"/>
-      <path d="M5.785 10.913c-.347 0-.628.286-.628.64 0 .353.281.64.628.64.347 0 .628-.287.628-.64 0-.353-.281-.64-.628-.64zm5.177 0c-.347 0-.628.286-.628.64 0 .353.281.64.628.64.347 0 .628-.287.628-.64 0-.353-.281-.64-.628-.64zm4.204 3.525c-.135.108-.37.082-.525-.058-.155-.024-.291.108-.424.242-.265.265-.258.692.015.957.273.265.692.257.957-.015.132-.134.108-.37.081-.525zm1.58 2.213c-.169.135-.464.102-.662.067-.198-.035-.363.136-.536.303-.332.332-.324.866.019 1.198.343.343.866.325 1.198-.019.169-.135.199-.368.063-.562zm3.266-1.393c-.203.161-.559.122-.797.081-.238-.041-.436.163-.645.362-.398.398-.39 1.038.023 1.436.413.412 1.038.39 1.436-.023.202-.161.235-.44.082-.645zm1.675 1.675c-.203.161-.559.122-.797.081-.238-.041-.436.163-.645.362-.398.398-.39 1.038.023 1.436.413.412 1.038.39 1.436-.023.202-.161.235-.44.082-.645z"/>
-    </svg>
-  </a>
-  -->
-</div>
-
 <style>
-  /* 悬浮按钮样式 */
+  /* Floating button animation */
   .floating-cta {
     animation: slideInRight 0.6s ease-out;
   }
@@ -67,7 +65,7 @@ const currentPath = Astro.url.pathname;
     }
   }
 
-  /* 移动端优化 */
+  /* Mobile optimization */
   @media (max-width: 640px) {
     .floating-cta {
       right: 1.25rem;
@@ -80,14 +78,14 @@ const currentPath = Astro.url.pathname;
     }
   }
 
-  /* 鼠标悬停时暂停脉冲 */
+  /* Pause animation on hover */
   .floating-cta a:hover {
     animation-play-state: paused;
   }
 </style>
 
 <script>
-  // 添加滚动显示/隐藏效果
+  // Scroll-based show/hide effect
   let lastScrollY = window.scrollY;
   const cta = document.querySelector('.floating-cta');
 

@@ -6,6 +6,7 @@ import poseImage from '../../assets/image/tai-chi-pose.jpg';
 import silhouetteImage from '../../assets/image/tai-chi-silhouette.jpg';
 import standingImage from '../../assets/image/tai-chi-standing.jpg';
 import kungFuImage from '../../assets/image/tai-chi-kung-fu.jpg';
+import { withBase } from '../../lib/paths';
 ---
 
 <BaseLayout title="Tai Chi bewegingen - Klassieke bewegingen">
@@ -777,13 +778,13 @@ import kungFuImage from '../../assets/image/tai-chi-kung-fu.jpg';
       </p>
       <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
         <a
-          href="/courses"
+          href={withBase("/courses")}
           class="px-8 py-4 bg-accent hover:bg-primary text-paper hover:text-paper border-2 border-accent hover:border-primary rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
         >
           Bekijk cursussen
         </a>
         <a
-          href="/about"
+          href={withBase("/about")}
           class="px-8 py-4 border-2 border-accent/30 text-accent hover:bg-accent/10 rounded-lg font-medium text-lg transition-all duration-300 hover:scale-105"
         >
           Leer over Tai Chi

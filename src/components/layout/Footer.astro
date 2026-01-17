@@ -1,18 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import taichiLogo from '../../assets/image/taichi-logo.png';
-import { getRelativeLocaleUrl } from 'astro:i18n';
+import { localizedPath } from '../../lib/paths';
 
 const currentYear = new Date().getFullYear();
 const currentLocale = (Astro.currentLocale || 'nl') as 'nl' | 'en' | 'zh';
-
-// 根据语言生成链接
-const getLocalizedHref = (path: string) => {
-  if (currentLocale === 'nl') {
-    return path;
-  }
-  return `/${currentLocale}${path}`;
-};
 
 // 翻译内容
 const footerContent = {
@@ -70,14 +62,14 @@ const t = footerContent[currentLocale];
 
 const footerLinks = {
   about: [
-    { name: currentLocale === 'zh' ? '关于太极' : (currentLocale === 'nl' ? 'Over Tai Chi' : 'About Tai Chi'), href: getLocalizedHref('/about') },
-    { name: currentLocale === 'zh' ? '招式展示' : (currentLocale === 'nl' ? 'Bewegingen' : 'Movements'), href: getLocalizedHref('/movements') },
-    { name: currentLocale === 'zh' ? '课程报名' : (currentLocale === 'nl' ? 'Cursussen' : 'Courses'), href: getLocalizedHref('/courses') },
+    { name: currentLocale === 'zh' ? '关于太极' : (currentLocale === 'nl' ? 'Over Tai Chi' : 'About Tai Chi'), href: localizedPath('/about', currentLocale) },
+    { name: currentLocale === 'zh' ? '招式展示' : (currentLocale === 'nl' ? 'Bewegingen' : 'Movements'), href: localizedPath('/movements', currentLocale) },
+    { name: currentLocale === 'zh' ? '课程报名' : (currentLocale === 'nl' ? 'Cursussen' : 'Courses'), href: localizedPath('/courses', currentLocale) },
   ],
   community: [
-    { name: currentLocale === 'zh' ? '学员风采' : (currentLocale === 'nl' ? 'Leerlingen' : 'Students'), href: getLocalizedHref('/blog') },
-    { name: currentLocale === 'zh' ? '太极哲学' : (currentLocale === 'nl' ? 'Filosofie' : 'Philosophy'), href: getLocalizedHref('/about#philosophy') },
-    { name: currentLocale === 'zh' ? '联系方式' : (currentLocale === 'nl' ? 'Contact' : 'Contact'), href: getLocalizedHref('/about#contact') },
+    { name: currentLocale === 'zh' ? '学员风采' : (currentLocale === 'nl' ? 'Leerlingen' : 'Students'), href: localizedPath('/blog', currentLocale) },
+    { name: currentLocale === 'zh' ? '太极哲学' : (currentLocale === 'nl' ? 'Filosofie' : 'Philosophy'), href: localizedPath('/about#philosophy', currentLocale) },
+    { name: currentLocale === 'zh' ? '联系方式' : (currentLocale === 'nl' ? 'Contact' : 'Contact'), href: localizedPath('/about#contact', currentLocale) },
   ],
 };
 ---
@@ -93,7 +85,7 @@ const footerLinks = {
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
       <!-- Logo 和简介 -->
       <div class="lg:col-span-1">
-        <a href={getLocalizedHref('/')} class="flex items-center space-x-3 mb-6 group">
+        <a href={localizedPath('/', currentLocale)} class="flex items-center space-x-3 mb-6 group">
           <Image
             src={taichiLogo}
             alt={t.siteName}
@@ -211,8 +203,8 @@ const footerLinks = {
           {t.copyright}
         </p>
         <div class="flex items-center space-x-6 text-sm text-ink-light">
-          <a href={getLocalizedHref('/privacy')} class="hover:text-accent transition-colors duration-300">{t.privacy}</a>
-          <a href={getLocalizedHref('/terms')} class="hover:text-accent transition-colors duration-300">{t.terms}</a>
+          <a href={localizedPath('/privacy', currentLocale)} class="hover:text-accent transition-colors duration-300">{t.privacy}</a>
+          <a href={localizedPath('/terms', currentLocale)} class="hover:text-accent transition-colors duration-300">{t.terms}</a>
         </div>
         <p class="text-sm text-ink-light">
           {t.tagline2}
