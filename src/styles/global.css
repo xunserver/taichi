@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  /* 中国水墨风格配色 */
+  --color-primary: #2D2D2D;           /* 墨黑 */
+  --color-secondary: #6B6B6B;         /* 淡墨灰 */
+  --color-accent: #C83232;            /* 朱砂红 */
+  --color-cyan: #4A7C9B;              /* 青花蓝 */
+  --color-paper: #F5F2ED;             /* 宣纸白 */
+  --color-ink: #1A1A1A;               /* 浓墨 */
+  --color-ink-light: #8B8B8B;         /* 浅墨 */
+  --color-mist: #E8E5E0;              /* 雾白 */
+  --color-border: #D4D4D4;            /* 淡灰边框 */
+
+  /* 自定义字体 */
+  --font-serif: "Noto Serif TC", serif;
+  --font-sans: "Noto Sans TC", sans-serif;
+}
+
+/* 全局样式 */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  /* 宣纸纹理效果 */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-blend-mode: overlay;
+}
+
+/* 尊重用户动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 平滑淡入动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* 浮动动画 */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* 视差滚动效果 */
+.parallax {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* 滚动触发动画类 */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 水墨画纹理效果 */
+.ink-wash-texture {
+  position: relative;
+}
+
+.ink-wash-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(45, 45, 45, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(200, 50, 50, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 40% 20%, rgba(74, 124, 155, 0.02) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 水墨晕染动画 */
+@keyframes inkSpread {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
+.ink-spread {
+  animation: inkSpread 8s ease-out infinite;
+}
+
+/* 语录卡片悬停效果 */
+.Quote-card {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.Quote-card:hover {
+  transform: translateY(-8px);
+}
+
+/* 印章旋转动画 */
+@keyframes sealRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.seal-spin {
+  animation: sealRotate 20s linear infinite;
+}
+
+/* 引号淡入动画 */
+@keyframes quoteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+}
+
+.animate-quote-mark {
+  animation: quoteFadeIn 0.8s ease-out;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F5F2ED;
+}
+
+html.dark ::-webkit-scrollbar-track {
+  background-color: #1A1A1A;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #6B6B6B;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #2D2D2D;
+}
