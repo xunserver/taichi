@@ -9,6 +9,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Astro 5**: 现代化的静态网站生成器，采用岛屿架构（Islands Architecture）
 - **Vue 3**: 用于交互式组件（通过 @astrojs/vue 集成）
 - **TypeScript**: 配置了类型检查（tsconfig.json）
+- **Tailwind CSS**: 用于样式化（通过 @tailwindcss/vite 集成）
 
 ## 项目结构
 ```
@@ -35,6 +36,7 @@ src/
 2. **客户端交互**：需要客户端交互的组件应使用 Vue 组件（`.vue` 文件）或添加 `client:*` 指令
 3. **静态资源**：`public/` 目录中的文件会直接复制到构建输出，`src/assets/` 中的资源会被 Astro 优化处理
 4. **路由**：基于文件系统，`src/pages/index.astro` 对应网站根路径
+5. **样式**：使用 Tailwind CSS 类名进行样式
 
 ## llm文档
 astro 文档：https://docs.astro.build/llms.txt
